@@ -15,11 +15,9 @@ services:
     networks:
       - mean-network
 
-  # Backend API
+  # Backend API - Uses pre-built image from Docker Hub
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: sksalahuddin0/mean-backend:latest
     container_name: backend
     restart: always
     ports:
@@ -32,11 +30,9 @@ services:
     networks:
       - mean-network
 
-  # Frontend with Nginx
+  # Frontend with Nginx - Uses pre-built image from Docker Hub
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: sksalahuddin0/mean-frontend:latest
     container_name: frontend
     restart: always
     ports:
