@@ -60,7 +60,6 @@ cd backend
 npm install
 npm start
 ```
-Backend runs on: http://localhost:8080
 
 ### Frontend Setup
 ```
@@ -69,7 +68,6 @@ cd frontend
 npm install
 ng serve --port 8081
 ```
-Frontend runs on: http://localhost:8081
 
 ---
 
@@ -96,11 +94,6 @@ docker build -t mean-frontend .
 bash
 docker-compose up -d
 ```
-
-### Access the Application
-- Frontend (via Nginx): http://localhost
-- Backend API: http://localhost:8080
-- MongoDB: localhost:27017
 
 ---
 
@@ -258,15 +251,6 @@ docker exec -it mongodb mongosh
 
 ---
 
-## Environment Variables
-
-| Variable | Default | Description |
-|----------|---------|-------------|
-| PORT | 8080 | Backend server port |
-| MONGO_URI | mongodb://mongodb:27017/dd_db | MongoDB connection string |
-
----
-
 ## Screenshots Checklist - How to Verify
 
 ### 1. CI/CD Pipeline Configuration in Jenkins
@@ -319,81 +303,6 @@ curl http://localhost:8080/
 # Test from browser:
 # http://<EC2-IP>
 # Take screenshot of the application landing page
-```
-
-### 4. Working UI - Tutorial List Page
-```
-# In browser, navigate to: http://<EC2-IP>
-
-# Take screenshot showing:
-- Header "Tutorials"
-- Table with columns: Title, Description, Status, Actions
-- "No tutorials found" message OR list of tutorials
-- "Add New Tutorial" button
-```
-
-### 5. Add Tutorial Functionality
-```
-# In browser:
-1. Click "Add New Tutorial" button
-2. Fill in:
-   - Title: "Test Tutorial"
-   - Description: "This is a test"
-   - Check/uncheck "Published"
-3. Click "Save"
-
-# Take screenshot of:
-- Form filled with data
-- Success message OR updated list
-
-# Verify in API:
-curl http://localhost:8080/api/tutorials
-```
-
-### 6. Edit/Delete Tutorial Functionality
-```
-# In browser, on tutorial list:
-1. Click "Edit" button on a tutorial
-2. Modify title/description
-3. Click "Update"
-
-4. Click "Delete" button on a tutorial
-5. Confirm deletion
-
-# Take screenshot of:
-- Edit form with pre-filled data
-- Updated list after edit/delete
-```
-
-### 7. Search Functionality
-```
-# In browser:
-1. Type in the search box: "test"
-2. Click "Search" button
-
-# Take screenshot of:
-- Search results filtered by title
-- "No results found" if no match
-```
-
-### 8. Nginx Configuration and Logs
-```
-# On EC2, check Nginx config:
-sudo docker exec mean-frontend cat /etc/nginx/conf.d/default.conf
-
-# Check Nginx logs:
-sudo docker logs mean-frontend
-
-# Check access logs:
-sudo docker exec mean-frontend tail -f /var/log/nginx/access.log
-
-# Take screenshot of:
-- Nginx configuration file content
-- Nginx logs showing requests
-
-# Verify reverse proxy working:
-curl http://localhost/api/tutorials
-# Should return JSON from backend
 ```
 
 ---
