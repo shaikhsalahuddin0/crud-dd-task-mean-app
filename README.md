@@ -1,4 +1,4 @@
-# MEAN Stack CRUD Application - Deployment Guide
+# Full-Stack MEAN Application Deployment
 
 A complete full-stack MEAN (MongoDB, Express, Angular, Node.js) application with Docker containerization and CI/CD deployment using Jenkins.
 
@@ -412,6 +412,7 @@ curl http://localhost/api/tutorials
 <img width="1920" height="1020" alt="DD Task - Google Chrome 24-02-2026 18_42_16" src="https://github.com/user-attachments/assets/31c39ee3-bab2-4ed4-bca7-2fa4f365b428" />
 
 - ## Video
+![2026-02-24 19-17-18 (1)](https://github.com/user-attachments/assets/b425c4a9-3b8b-4df1-be9c-d440011c8a5f)
 
 
 ---
