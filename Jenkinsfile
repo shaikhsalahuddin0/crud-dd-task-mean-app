@@ -5,7 +5,7 @@ pipeline {
         DOCKER_USERNAME = 'sksalahuddin0'
         DOCKER_IMAGE_BACKEND = 'sksalahuddin0/mean-backend'
         DOCKER_IMAGE_FRONTEND = 'sksalahuddin0/mean-frontend'
-        EC2_HOST = '18.212.123.45'  // Replace with your EC2 public IP
+        EC2_HOST = '65.0.129.64'  // Replace with your EC2 public IP
         EC2_USER = 'ubuntu'
         EC2_KEY = credentials('ec2-ssh-key')  // Jenkins credential ID for SSH key
     }
