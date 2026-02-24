@@ -400,15 +400,18 @@ curl http://localhost/api/tutorials
 
 ## Screenshots Checklist (Mark as Complete)
 
-- [ <img width="1920" height="1020" alt="65 0 129 64_8080 - Google Chrome 24-02-2026 18_47_53" src="https://github.com/user-attachments/assets/0e6b3c35-f175-4e41-8fe3-72dded3e8a56" />
-] CI/CD Pipeline configuration in Jenkins
-- [ ] Docker image build and push to Docker Hub
-- [ ] Application running on EC2 (http://<ec2-ip>)
-- [ ] Working UI - Tutorial list page
-- [ ] Add Tutorial functionality
-- [ ] Edit/Delete Tutorial functionality
-- [ ] Search functionality
-- [ ] Nginx configuration and logs
+- ## CI/CD Pipeline configuration in Jenkins
+<img width="1920" height="1020" alt="65 0 129 64_8080 - Google Chrome 24-02-2026 18_47_53" src="https://github.com/user-attachments/assets/0e6b3c35-f175-4e41-8fe3-72dded3e8a56" />
+
+- ## Docker image build and push to Docker Hub
+<img width="1920" height="1020" alt="EC2 Instance Connect _ ap-south-1 - Google Chrome 24-02-2026 18_39_11" src="https://github.com/user-attachments/assets/cc514a44-9a1f-4fbd-b98a-0507bacbbaad" />
+
+- ## Application running on EC2 
+<img width="1920" height="1020" alt="DD Task - Google Chrome 24-02-2026 18_40_19" src="https://github.com/user-attachments/assets/37dbc006-c7d6-466c-b1c9-c2b51df68850" />
+<img width="1920" height="1020" alt="DD Task - Google Chrome 24-02-2026 18_42_16" src="https://github.com/user-attachments/assets/31c39ee3-bab2-4ed4-bca7-2fa4f365b428" />
+
+- ## Video
+
 
 ---
 
