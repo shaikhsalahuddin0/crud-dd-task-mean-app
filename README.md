@@ -270,7 +270,138 @@ docker exec -it mongodb mongosh
 
 ---
 
-## Screenshots Checklist
+## Screenshots Checklist - How to Verify
+
+### 1. CI/CD Pipeline Configuration in Jenkins
+```
+# On EC2, access Jenkins UI
+# http://<EC2-IP>:8080
+
+# Steps to verify:
+1. Login to Jenkins dashboard
+2. Navigate to your Pipeline job
+3. Take screenshot of Pipeline configuration page
+4. Screenshot should show:
+   - GitHub repository URL configured
+   - Jenkinsfile script
+   - Build triggers configuration
+```
+
+### 2. Docker Image Build and Push to Docker Hub
+```
+# On Jenkins console output or local terminal:
+
+# Build and push commands:
+docker build -t sksalahuddin0/mean-backend ./backend
+docker build -t sksalahuddin0/mean-frontend ./frontend
+docker push sksalahuddin0/mean-backend
+docker push sksalahuddin0/mean-frontend
+
+# Verify on Docker Hub:
+# Visit: https://hub.docker.com/u/sksalahuddin0
+# Take screenshot of both images listed
+```
+
+### 3. Application Running on EC2
+```
+# SSH into EC2 and check:
+ssh -i your-key.pem ubuntu@<EC2-IP>
+
+# Check containers running:
+sudo docker ps
+
+# Should show 3 containers:
+# - mean-backend
+# - mean-frontend  
+# - mongodb
+
+# Test API:
+curl http://localhost:8080/
+# Expected: {"message":"Welcome to Test application."}
+
+# Test from browser:
+# http://<EC2-IP>
+# Take screenshot of the application landing page
+```
+
+### 4. Working UI - Tutorial List Page
+```
+# In browser, navigate to: http://<EC2-IP>
+
+# Take screenshot showing:
+- Header "Tutorials"
+- Table with columns: Title, Description, Status, Actions
+- "No tutorials found" message OR list of tutorials
+- "Add New Tutorial" button
+```
+
+### 5. Add Tutorial Functionality
+```
+# In browser:
+1. Click "Add New Tutorial" button
+2. Fill in:
+   - Title: "Test Tutorial"
+   - Description: "This is a test"
+   - Check/uncheck "Published"
+3. Click "Save"
+
+# Take screenshot of:
+- Form filled with data
+- Success message OR updated list
+
+# Verify in API:
+curl http://localhost:8080/api/tutorials
+```
+
+### 6. Edit/Delete Tutorial Functionality
+```
+# In browser, on tutorial list:
+1. Click "Edit" button on a tutorial
+2. Modify title/description
+3. Click "Update"
+
+4. Click "Delete" button on a tutorial
+5. Confirm deletion
+
+# Take screenshot of:
+- Edit form with pre-filled data
+- Updated list after edit/delete
+```
+
+### 7. Search Functionality
+```
+# In browser:
+1. Type in the search box: "test"
+2. Click "Search" button
+
+# Take screenshot of:
+- Search results filtered by title
+- "No results found" if no match
+```
+
+### 8. Nginx Configuration and Logs
+```
+# On EC2, check Nginx config:
+sudo docker exec mean-frontend cat /etc/nginx/conf.d/default.conf
+
+# Check Nginx logs:
+sudo docker logs mean-frontend
+
+# Check access logs:
+sudo docker exec mean-frontend tail -f /var/log/nginx/access.log
+
+# Take screenshot of:
+- Nginx configuration file content
+- Nginx logs showing requests
+
+# Verify reverse proxy working:
+curl http://localhost/api/tutorials
+# Should return JSON from backend
+```
+
+---
+
+## Screenshots Checklist (Mark as Complete)
 
 - [ ] CI/CD Pipeline configuration in Jenkins
 - [ ] Docker image build and push to Docker Hub
