@@ -138,9 +138,6 @@ docker-compose --version
 
 ### Step 3: Deploy Application
 ```
-bash
-# SSH into your EC2 instance
-ssh -i your-key.pem ubuntu@your-ec2-ip
 
 # Clone the repository
 git clone https://github.com/shaikhsalahuddin0/crud-dd-task-mean-app.git
@@ -435,11 +432,3 @@ docker rmi mean-backend mean-frontend
 ```
 
 ---
-
-## License
-
-ISC
-
-## Author
-
-Shaikh Salahuddin
