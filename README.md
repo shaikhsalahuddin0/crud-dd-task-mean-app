@@ -400,7 +400,8 @@ curl http://localhost/api/tutorials
 
 ## Screenshots Checklist (Mark as Complete)
 
-- [ ] CI/CD Pipeline configuration in Jenkins
+- [ <img width="1920" height="1020" alt="65 0 129 64_8080 - Google Chrome 24-02-2026 18_47_53" src="https://github.com/user-attachments/assets/0e6b3c35-f175-4e41-8fe3-72dded3e8a56" />
+] CI/CD Pipeline configuration in Jenkins
 - [ ] Docker image build and push to Docker Hub
 - [ ] Application running on EC2 (http://<ec2-ip>)
 - [ ] Working UI - Tutorial list page
