@@ -279,6 +279,8 @@ curl http://localhost:8080/
 # http://<EC2-IP>
 ```
 <img width="1920" height="1020" alt="DD Task - Google Chrome 24-02-2026 18_40_19" src="https://github.com/user-attachments/assets/37dbc006-c7d6-466c-b1c9-c2b51df68850" />
+<img width="1920" height="1020" alt="DD Task - Google Chrome 24-02-2026 18_42_16" src="https://github.com/user-attachments/assets/83d08475-4325-4f90-bb8b-19fc54131efc" />
+
 
 ## Video
 ![2026-02-24 19-17-18 (1)](https://github.com/user-attachments/assets/b425c4a9-3b8b-4df1-be9c-d440011c8a5f)
