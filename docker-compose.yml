@@ -15,8 +15,11 @@ services:
     networks:
       - mean-network
 
-  # Backend API - Uses pre-built image from Docker Hub
+  # Backend API - Build from local Dockerfile or pull from Docker Hub
   backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     image: sksalahuddin0/mean-backend:latest
     container_name: backend
     restart: always
@@ -30,8 +33,11 @@ services:
     networks:
       - mean-network
 
-  # Frontend with Nginx - Uses pre-built image from Docker Hub
+  # Frontend with Nginx - Build from local Dockerfile
   frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     image: sksalahuddin0/mean-frontend:latest
     container_name: frontend
     restart: always
