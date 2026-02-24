@@ -26,7 +26,7 @@ This is a Tutorial Management CRUD application where users can:
 ```
 crud-dd-task-mean-app/
 ├── backend/
-│   ├── Dockerfile              # Backend container image
+│   ├── Dockerfile            
 │   ├── package.json
 │   ├── server.js
 │   └── app/
@@ -35,64 +35,13 @@ crud-dd-task-mean-app/
 │       ├── models/
 │       └── routes/
 ├── frontend/
-│   ├── Dockerfile              # Frontend container image
-│   ├── nginx.conf              # Nginx configuration
+│   ├── Dockerfile            
+│   ├── nginx.conf             
 │   ├── package.json
 │   └── src/
-├── docker-compose.yml           # Orchestrates all services
-├── Jenkinsfile                  # CI/CD pipeline
+├── docker-compose.yml          
+├── Jenkinsfile                  
 └── README.md
-```
-
----
-
-## Local Development Setup
-
-### Prerequisites
-- Node.js 18+
-- Docker and Docker Compose
-- MongoDB (or use Docker)
-
-### Backend Setup
-```
-bash
-cd backend
-npm install
-npm start
-```
-
-### Frontend Setup
-```
-bash
-cd frontend
-npm install
-ng serve --port 8081
-```
-
----
-
-## Docker Deployment (Manual)
-
-### Building Images Locally
-
-1. **Build Backend Image:**
-```
-bash
-cd backend
-docker build -t mean-backend .
-```
-
-2. **Build Frontend Image:**
-```
-bash
-cd frontend
-docker build -t mean-frontend .
-```
-
-3. **Run with Docker Compose:**
-```
-bash
-docker-compose up -d
 ```
 
 ---
@@ -103,9 +52,9 @@ docker-compose up -d
 1. Go to AWS EC2 Console
 2. Launch Ubuntu 22.04 LTS instance
 3. Configure Security Group:
-   - Open port 80 (HTTP)
-   - Open port 22 (SSH)
-   - Open port 8080 (for backend access if needed)
+   - Open port 80 (HTTP) 
+   - Open port 22 (SSH) 
+   - Open port 8080 (for backend access if needed) 
 
 ### Step 2: Install Docker on EC2
 ```
@@ -195,27 +144,52 @@ sudo systemctl status jenkins
 4. **Push Images** - Push images to Docker Hub
 5. **Deploy to EC2** - Pull images and restart containers on EC2
 
+## Build Docker images locally on EC2 (Run on EC2)
+
+```
+cd crud-dd-task-mean-app/backend
+docker build -t sksalahuddin0/mean-backend:latest .
+cd ../frontend
+docker build -t sksalahuddin0/mean-frontend:latest .
+```
+## Login to Docker Hub (Run on EC2)
+
+```
+docker login
+# Enter your Docker Hub username: sksalahuddin0
+# Enter your Docker Hub password
+```
+
 ### Docker Hub Images
 - Backend: `sksalahuddin0/mean-backend:latest`
 - Frontend: `sksalahuddin0/mean-frontend:latest`
 
 ---
+## Run the application with Docker Compose (Run on EC2)
+```
+cd crud-dd-task-mean-app
+sudo docker-compose up -d
+```
+---
+## Test the application
+## Test Backend API:
+```
+curl http://<ec2-ip>:8080/
+```
+
+Expected output: `{"message":"Welcome to Test application."}`
+
+### Test Frontend:
+Open your browser and visit:
+```
+http://<ec2-ip>
+```
 
 ## Nginx Configuration
 
 The Nginx server acts as a reverse proxy:
 - Serves Angular static files on port 80
 - Proxies API requests to backend container
-
-### Request Flow
-```
-User Request (Port 80)
-       ↓
-    Nginx
-       ↓
-   /api/* → Backend:8080
-   /*      → Angular Static Files
-```
 
 ---
 
@@ -251,7 +225,7 @@ docker exec -it mongodb mongosh
 
 ---
 
-## Screenshots Checklist - How to Verify
+## Screenshots 
 
 ### 1. CI/CD Pipeline Configuration in Jenkins
 ```
@@ -266,6 +240,8 @@ docker exec -it mongodb mongosh
    - GitHub repository URL configured
    - Jenkinsfile script
    - Build triggers configuration
+
+<img width="1920" height="1020" alt="65 0 129 64_8080 - Google Chrome 24-02-2026 18_47_53" src="https://github.com/user-attachments/assets/0e6b3c35-f175-4e41-8fe3-72dded3e8a56" />
 ```
 
 ### 2. Docker Image Build and Push to Docker Hub
@@ -280,7 +256,8 @@ docker push sksalahuddin0/mean-frontend
 
 # Verify on Docker Hub:
 # Visit: https://hub.docker.com/u/sksalahuddin0
-# Take screenshot of both images listed
+
+<img width="1920" height="1020" alt="EC2 Instance Connect _ ap-south-1 - Google Chrome 24-02-2026 18_39_11" src="https://github.com/user-attachments/assets/cc514a44-9a1f-4fbd-b98a-0507bacbbaad" />
 ```
 
 ### 3. Application Running on EC2
@@ -302,25 +279,11 @@ curl http://localhost:8080/
 
 # Test from browser:
 # http://<EC2-IP>
-# Take screenshot of the application landing page
+
+<img width="1920" height="1020" alt="DD Task - Google Chrome 24-02-2026 18_40_19" src="https://github.com/user-attachments/assets/37dbc006-c7d6-466c-b1c9-c2b51df68850" />
 ```
 
----
-
-## Screenshots Checklist (Mark as Complete)
-
-
-- ## Docker image build and push to Docker Hub
-<img width="1920" height="1020" alt="EC2 Instance Connect _ ap-south-1 - Google Chrome 24-02-2026 18_39_11" src="https://github.com/user-attachments/assets/cc514a44-9a1f-4fbd-b98a-0507bacbbaad" />
-
-- ## CI/CD Pipeline configuration in Jenkins
-<img width="1920" height="1020" alt="65 0 129 64_8080 - Google Chrome 24-02-2026 18_47_53" src="https://github.com/user-attachments/assets/0e6b3c35-f175-4e41-8fe3-72dded3e8a56" />
-
-- ## Application running on EC2 
-<img width="1920" height="1020" alt="DD Task - Google Chrome 24-02-2026 18_40_19" src="https://github.com/user-attachments/assets/37dbc006-c7d6-466c-b1c9-c2b51df68850" />
-<img width="1920" height="1020" alt="DD Task - Google Chrome 24-02-2026 18_42_16" src="https://github.com/user-attachments/assets/31c39ee3-bab2-4ed4-bca7-2fa4f365b428" />
-
-- ## Video
+## Video
 ![2026-02-24 19-17-18 (1)](https://github.com/user-attachments/assets/b425c4a9-3b8b-4df1-be9c-d440011c8a5f)
 
 
