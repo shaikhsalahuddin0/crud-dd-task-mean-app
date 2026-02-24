@@ -257,9 +257,8 @@ docker push sksalahuddin0/mean-frontend
 # Verify on Docker Hub:
 # Visit: https://hub.docker.com/u/sksalahuddin0
 
-<img width="1920" height="1020" alt="EC2 Instance Connect _ ap-south-1 - Google Chrome 24-02-2026 18_39_11" src="https://github.com/user-attachments/assets/cc514a44-9a1f-4fbd-b98a-0507bacbbaad" />
 ```
-
+<img width="1920" height="1020" alt="EC2 Instance Connect _ ap-south-1 - Google Chrome 24-02-2026 18_39_11" src="https://github.com/user-attachments/assets/cc514a44-9a1f-4fbd-b98a-0507bacbbaad" />
 ### 3. Application Running on EC2
 ```
 # SSH into EC2 and check:
