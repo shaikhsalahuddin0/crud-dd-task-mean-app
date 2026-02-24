@@ -411,8 +411,7 @@ curl http://localhost/api/tutorials
 <img width="1920" height="1020" alt="DD Task - Google Chrome 24-02-2026 18_42_16" src="https://github.com/user-attachments/assets/31c39ee3-bab2-4ed4-bca7-2fa4f365b428" />
 
 - ## Video
-![2026-02-24 19-17-18](https://github.com/user-attachments/assets/692aa408-a11b-4f06-b906-400f6930db9e)
-
+https://drive.google.com/file/d/13FSuD6EVkd-g8sdPkdKEA_HgedX7ENB0/view?usp=sharing
 
 
 ---
