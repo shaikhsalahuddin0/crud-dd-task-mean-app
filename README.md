@@ -240,9 +240,8 @@ docker exec -it mongodb mongosh
    - GitHub repository URL configured
    - Jenkinsfile script
    - Build triggers configuration
-
-<img width="1920" height="1020" alt="65 0 129 64_8080 - Google Chrome 24-02-2026 18_47_53" src="https://github.com/user-attachments/assets/0e6b3c35-f175-4e41-8fe3-72dded3e8a56" />
 ```
+<img width="1920" height="1020" alt="65 0 129 64_8080 - Google Chrome 24-02-2026 18_47_53" src="https://github.com/user-attachments/assets/0e6b3c35-f175-4e41-8fe3-72dded3e8a56" />
 
 ### 2. Docker Image Build and Push to Docker Hub
 ```
@@ -278,13 +277,11 @@ curl http://localhost:8080/
 
 # Test from browser:
 # http://<EC2-IP>
-
-<img width="1920" height="1020" alt="DD Task - Google Chrome 24-02-2026 18_40_19" src="https://github.com/user-attachments/assets/37dbc006-c7d6-466c-b1c9-c2b51df68850" />
 ```
+<img width="1920" height="1020" alt="DD Task - Google Chrome 24-02-2026 18_40_19" src="https://github.com/user-attachments/assets/37dbc006-c7d6-466c-b1c9-c2b51df68850" />
 
 ## Video
 ![2026-02-24 19-17-18 (1)](https://github.com/user-attachments/assets/b425c4a9-3b8b-4df1-be9c-d440011c8a5f)
-
 
 ---
 
